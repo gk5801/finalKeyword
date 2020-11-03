@@ -1,0 +1,35 @@
+package primitiveDT;
+ class A
+{
+	final int x = 10;   //value of x cannot be changed now.
+	final int y;
+	A()
+	{
+	   y=5;	// final (fixed)value of y
+	}
+	final void print()   // cannot be overriden
+	{
+	  System.out.println("I am A " + y);
+    }
+	
+}
+class B extends A
+{
+	int x=3;
+	void print(int a)  //can be overloaded
+	{
+		int x=9;
+	    System.out.println("I am B " + x);
+    }
+}
+public class finalkey
+{
+	public static void main(String[] args)
+	{
+	   A obj = new A();
+	   B obje =new B();	  
+	   obj.print();
+	   obje.print(1);
+	}
+
+}
